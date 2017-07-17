@@ -6,7 +6,7 @@
 
 - It will work with any repository system using git version control (GitHub is the most common)
 
-- During install, make sure you set the options to interface with git using Git Bash. This will mean you can use git with a dedicated command line interface (called the “Git Bash” shell)
+- During install, set the options to interface with git "using Git Bash only". This means you will git with a dedicated command line interface (called the “Git Bash” shell) rather than the general windows command line.
 
 - Once installed, open the Git Bash shell:
 
