@@ -38,6 +38,8 @@ git --help
 
 ## Starting with a new, local repository
 
+*Note: if you're just working with an existing (GitHub) repository, skip to the **Working with existing repositories** section*.
+
 Any folder can be initialized as a new git repository. For example, to create a new **local** repository `VA_NH_docs` to store this document and other helpful tools for the organization, we can use the commands:
 
 ```
@@ -86,28 +88,51 @@ A new text editor window should pop up, where you can add a message (details) to
 
 #### Push local changes to the remote
 
-Finally, you can **push** these committed changes to the remote repository:
+Now that the changes are committed locally, you can **push** them to the remote repository.
+
+Before the first push of changes to an empty remote repository, you need to tell git which branch on the remote matches your current branch (here, `master`):
 
 ```
-git push
+git push --set-upstream origin master
 ```
 
-Now the remote repository is up-to-date with our local one. 
+Now the remote repository is up-to-date with our local one.
 
-## Working with an existing repository
+## Working with existing repositories
 
-When you want to start working on the repository again, open Git Bash and navigate to the local repository (e.g., `cd E:/git/VA_NH_docs`), and then use:
+#### If you want to create a new local repository from an existing (GitHub) remote
+
+Navigate to where you want to create a local repository (e.g., `cd E:/git`). 
+
+Then use `git clone`, which will copy the existing remote repository to a new folder with the same name locally.
+
+```
+git clone https://github.com/VANatHeritage/Regional_SDM.git
+```
+
+Cloning the repository in this way allows git to automatically knows the `remote` source location and branches of the repository (as opposed to when creating a new local repository using `git init` as described in the previous section).  After the clone copies the repository to your local, you can proceed to use the general git process to make changes to the repository.
+
+#### General git process
+
+When you start working on a repository locally, open Git Bash and navigate to the local repository (e.g., `cd E:/git/VA_NH_docs`). 
+
+If the repository has multiple branches, and you want to work on a different branch than is currently displayed, use:
+
+```
+git checkout branch-name
+```
+
+to move to the branch you want to work on. Then use:
 
 ````g
 git pull
 ```
 
-to **pull** the changes from the remote to our local repository, which would incorporate any changes that were made by other users. The use the process outlined above:
+to **pull** all changes from the remote to our local repository, which incorporates all changes that were made by other users into your local repository. Note that this command will only pull updates for the current branch that you're working with. 
+
+Then use the the following process whenever you want to make updates to the repository:
 
 - make any edits to files/folders
 - use `git add *` to *stage* all of the changes locally
 - use `git commit` to *commit* all the changes locally
 - use `git push` to *push* all the changes to the remote repository
-
-#### 
-
