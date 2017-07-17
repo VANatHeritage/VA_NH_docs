@@ -124,11 +124,11 @@ git checkout branch-name
 
 to move to the branch you want to work on. Then use:
 
-````g
+```
 git pull
 ```
 
-to **pull** all changes from the remote to our local repository, which incorporates all changes that were made by other users into your local repository. Note that this command will only pull updates for the current branch that you're working with. 
+to **pull** all changes from the remote to our local repository, which will incorporate all the changes that were made by other users into your local repository. Note that this command will only pull updates for the current branch that you're working with. 
 
 Then use the the following process whenever you want to make updates to the repository:
 
