@@ -10,7 +10,7 @@
 
 - Once installed, open the Git Bash shell:
 
-  ![gitbash](E:/git/VA_NH_docs/img/gitbash.png)
+  ![gitbash](img/gitbash.png)
 
 There are a couple important global settings you'll want to set the first time you use Git Bash. These include your name and e-mail address, and the default text editor to open when needed. Set these with the following commands.
 
