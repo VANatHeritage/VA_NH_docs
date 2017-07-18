@@ -12,6 +12,10 @@
 
   ![gitbash](img/gitbash.png)
 
+  KH questions:
+  - Is there a difference between Git Bash and Git Shell?
+  - How do I change my configuration after I already installed?
+  
 There are a couple important global settings you'll want to set the first time you use Git Bash. These include your name and e-mail address, and the default text editor to open when needed. Set these with the following commands.
 
 ```
