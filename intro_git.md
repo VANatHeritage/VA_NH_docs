@@ -143,3 +143,5 @@ Then use the the following process whenever you want to make updates to the repo
 - use `git push` to *push* all the changes to the remote repository
 
 ***Note on pull:*** An alternative to `git pull` is `git fetch`. This will just download the changes made to the remote branches, but will not merge them. After using fetch, you can proceed to work as usual, but sometime before you push back to the remote, you'll need to use `git merge` to incorporate the remote edits with your local edits.
+
+   - KH Comments: Please let's go over push/pull/merge in detail and talk about some best practices for workflows. It seems really too easy to push to the origin and screw things up!!
