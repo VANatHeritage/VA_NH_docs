@@ -3,6 +3,7 @@
 #### Download git ([https://git-scm.com/downloads](https://git-scm.com/downloads))
 
 - This will allow you to use git locally in a command-line or GUI interface
+
    KH Comment: I am not fluent with it yet, but I do like the GUI for the ability to see the changes made, very clearly.
    ![gitgui](img/GitGUI.PNG)
 
