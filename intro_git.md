@@ -140,6 +140,7 @@ Then use the the following process whenever you want to make updates to the repo
 - use `git add *` to *stage* all of the changes locally
 - use `git commit` to *commit* all the changes locally
   - make sure to add a commit message (describing the updates you've made) to the notepad file that pops up. An empty message will abort the commit.
+  - KH Comment: I use the form "git commit -m 'commit message here', rather than composing the message in the text editor.
 - use `git push` to *push* all the changes to the remote repository
 
 ***Note on pull:*** An alternative to `git pull` is `git fetch`. This will just download the changes made to the remote branches, but will not merge them. After using fetch, you can proceed to work as usual, but sometime before you push back to the remote, you'll need to use `git merge` to incorporate the remote edits with your local edits.
