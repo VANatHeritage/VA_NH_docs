@@ -18,7 +18,7 @@
   KH questions:
   - Is there a difference between Git Bash and Git Shell?
   - How do I change my configuration after I already installed?
-  
+
 There are a couple important global settings you'll want to set the first time you use Git Bash. These include your name and e-mail address, and the default text editor to open when needed. Set these with the following commands.
 
 ```
@@ -143,9 +143,37 @@ Then use the the following process whenever you want to make updates to the repo
 - use `git add *` to *stage* all of the changes locally
 - use `git commit` to *commit* all the changes locally
   - make sure to add a commit message (describing the updates you've made) to the notepad file that pops up. An empty message will abort the commit.
-  - KH Comment: I use the form "git commit -m 'commit message here'", rather than composing the message in the text editor.
+  - `git commit -m 'commit message here'`: add commit message directly in command line rather than composing the message in the text editor
 - use `git push` to *push* all the changes to the remote repository
+
+
 
 ***Note on pull:*** An alternative to `git pull` is `git fetch`. This will just download the changes made to the remote branches, but will not merge them. After using fetch, you can proceed to work as usual, but sometime before you push back to the remote, you'll need to use `git merge` to incorporate the remote edits with your local edits.
 
-   - KH Comments: Please let's go over push/pull/fetch/merge in detail and talk about some best practices for workflows. It seems way too easy to push to the origin and royally screw things up!!
+### Good to know
+
+`git status` : check your current working directory status
+
+`git branch`: list all branches in the repository; `git branch -d [branch_name]` deletes it locally
+- to delete a remote branch: `git push origin :[branch_name]`
+
+`git remote -v`: list remotes for a repository
+
+`git diff`: compare your working directory to the latest commit (changes are highlighted)
+
+##### Merge locally
+
+If you are working on a branch (e.g., `working`) and just want to merge to another (e.g., `master`), without a pull request: First commit all your changes to the `working` branch. Then:
+
+```
+git checkout master
+git merge working
+git push
+```
+
+##### Merge on GitHub (pull request)
+
+If instead you want to merge on GitHub, again commit all your changes to `working`. Then just `git push` it to the `working` remote tracking branch on GitHub. Use GitHub's pull request button to merge `working` into `master`.
+
+
+
