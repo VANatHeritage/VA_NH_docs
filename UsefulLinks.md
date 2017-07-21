@@ -9,3 +9,4 @@
 
 # Other software for consideration
 - Marxan - decision support for conservation: http://marxan.net/
+- Diversity Calculator - web tool for calculating species diversity indices: http://millermountain.com/geospatialblog/2017/06/24/diversity-calculator/
