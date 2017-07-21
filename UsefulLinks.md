@@ -4,9 +4,8 @@
 - GitHub guides: https://guides.github.com/
 - GitHub glossary: https://help.github.com/articles/github-glossary/ 
 
-# R packages
+# R packages for consideration
 - spatialECO - spatial analysis and modeling: https://cran.r-project.org/web/packages/spatialEco/index.html
 
-# Other Software
+# Other software for consideration
 - Marxan - decision support for conservation: http://marxan.net/
-
