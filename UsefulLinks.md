@@ -3,6 +3,7 @@
 - GitHub reference manual: https://git-scm.com/docs
 - GitHub guides: https://guides.github.com/
 - GitHub glossary: https://help.github.com/articles/github-glossary/ 
+- Git cheatsheet: https://education.github.com/git-cheat-sheet-education.pdf
 
 # R packages for consideration
 - spatialECO - spatial analysis and modeling: https://cran.r-project.org/web/packages/spatialEco/index.html
