@@ -15,9 +15,6 @@
 
   ![gitbash](img/gitbash.png)
 
-  KH questions:
-  - Is there a difference between Git Bash and Git Shell?
-  - How do I change my configuration after I already installed?
 
 There are a couple important global settings you'll want to set the first time you use Git Bash. These include your name and e-mail address, and the default text editor to open when needed. Set these with the following commands.
 
@@ -156,6 +153,8 @@ Then use the the following process whenever you want to make updates to the repo
 
 `git branch`: list all branches in the repository; `git branch -d [branch_name]` deletes it locally
 - to delete a remote branch: `git push origin :[branch_name]`
+  - *note*: GitHub will not allow you to delete the default remote branch (generally `master`). To delete it, first change the default branch on GitHub (main repo webpage -> Branches)
+- `git branch -m [branch] [new_branchname]` : rename a branch
 
 `git remote -v`: list remotes for a repository
 
@@ -163,7 +162,9 @@ Then use the the following process whenever you want to make updates to the repo
 
 ##### Merge locally
 
-If you are working on a branch (e.g., `working`) and just want to merge to another (e.g., `master`), without a pull request: First commit all your changes to the `working` branch. Then:
+If you are working on a branch (e.g., `working`) and want to merge to another (e.g., `master`), without using a GitHub pull request. 
+
+First commit all your changes to the `working` branch. Then:
 
 ```
 git checkout master
@@ -175,5 +176,25 @@ git push
 
 If instead you want to merge on GitHub, again commit all your changes to `working`. Then just `git push` it to the `working` remote tracking branch on GitHub. Use GitHub's pull request button to merge `working` into `master`.
 
+##### Tagging ([doc](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
 
+After an important update to a branch, or when you want to apply a version, you can add a tag. You can do this after you've already committed and pushed your updates to the origin (GitHub). For example, if you've just pushed important changes to the `master` branch and want to call it version 1.0, use:
+
+```
+git tag v1.0
+```
+
+Instead, if you wanted to add more information about the tagging point, use an *annotated* (`-a`) tag with a message (`-m`):
+
+```
+git tag -a v1.0 -m "First stable release version 1.0"
+```
+
+After applying the tags, you need to specifically push them (this is separate from a regular `git push` for the branch):
+
+```
+git push origin --tags
+```
+
+Now your tags will appear next to your list of branches on GitHub.
 
