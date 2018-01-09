@@ -1,6 +1,8 @@
 # Working with git (and GitHub)
 
-#### Download git ([https://git-scm.com/downloads](https://git-scm.com/downloads))
+[TOC]
+
+## Download git ([https://git-scm.com/downloads](https://git-scm.com/downloads))
 
 - This will allow you to use git locally in a command-line or GUI interface
 
@@ -116,7 +118,9 @@ git clone https://github.com/VANatHeritage/Regional_SDM.git
 
 Cloning the repository in this way allows git to automatically know the `remote` source location and branches of the repository (as opposed to when creating a new local repository using `git init` as described in the previous section).  After the clone copies the repository to your local, you can proceed to use the general git process to make changes to the repository.
 
-#### General git process
+#### General git workflow
+
+##### Pull or fetch changes from remote
 
 When you start working on a repository locally, open Git Bash and navigate to the local repository (e.g., `cd E:/git/VA_NH_docs`). 
 
@@ -134,20 +138,39 @@ git pull
 
 which will both **pull** and **merge** (download and incorporate) all changes from the remote to our local repository. Note that this command only merges updates for the current branch that you're working with.
 
-Then use the the following process whenever you want to make updates to the repository:
+An alternative to `git pull` is `git fetch`. This will just download the changes made to the remote branches, but will not merge them. After using fetch, you can proceed to work as usual, but sometime before you push back to the remote, you'll need to use `git merge` to incorporate the remote edits with your local edits.
 
-- make any edits to files/folders
+##### Make edits, and `commit` changes
+
+Now make any edits to files/folders. When you've finished making changes:
+
 - use `git add *` to *stage* all of the changes locally
-- use `git commit` to *commit* all the changes locally
+- then use `git commit` to *commit* all the changes locally
   - make sure to add a commit message (describing the updates you've made) to the notepad file that pops up. An empty message will abort the commit.
   - `git commit -m 'commit message here'`: add commit message directly in command line rather than composing the message in the text editor
-- use `git push` to *push* all the changes to the remote repository
+- use `git push` to send your commits to the remote (GitHub)
 
+##### Merging
 
+Merging incorporates one branch into another. There are two ways to merge, locally using command line, or on GitHub.
 
-***Note on pull:*** An alternative to `git pull` is `git fetch`. This will just download the changes made to the remote branches, but will not merge them. After using fetch, you can proceed to work as usual, but sometime before you push back to the remote, you'll need to use `git merge` to incorporate the remote edits with your local edits.
+###### Merge locally
 
-### Good to know
+If you are finished working on a branch (e.g., `working`) and want to merge to another (e.g., `master`), without using a GitHub pull request:
+
+```
+git checkout master
+git merge working
+git push
+```
+
+###### Merge on GitHub (pull request)
+
+If instead you want to merge on GitHub, again commit all your changes to `working`. Then just `git push` it to the `working` remote tracking branch on GitHub. 
+
+On GitHub, use the pull request button to merge `working` into `master`.
+
+## Good to know
 
 `git status` : check your current working directory status
 
@@ -160,23 +183,7 @@ Then use the the following process whenever you want to make updates to the repo
 
 `git diff`: compare your working directory to the latest commit (changes are highlighted)
 
-##### Merge locally
-
-If you are working on a branch (e.g., `working`) and want to merge to another (e.g., `master`), without using a GitHub pull request. 
-
-First commit all your changes to the `working` branch. Then:
-
-```
-git checkout master
-git merge working
-git push
-```
-
-##### Merge on GitHub (pull request)
-
-If instead you want to merge on GitHub, again commit all your changes to `working`. Then just `git push` it to the `working` remote tracking branch on GitHub. Use GitHub's pull request button to merge `working` into `master`.
-
-##### Tagging ([doc](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
+#### Tagging ([doc](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
 
 After an important update to a branch, or when you want to apply a version, you can add a tag. You can do this after you've already committed and pushed your updates to the origin (GitHub). For example, if you've just pushed important changes to the `master` branch and want to call it version 1.0, use:
 
@@ -197,4 +204,3 @@ git push origin --tags
 ```
 
 Now your tags will appear next to your list of branches on GitHub.
-
