@@ -172,6 +172,8 @@ On GitHub, use the pull request button to merge `working` into `master`.
 
 ## Good to know
 
+#### Commands
+
 `git status` : check your current working directory status
 
 `git branch`: list all branches in the repository; `git branch -d [branch_name]` deletes it locally
@@ -183,7 +185,9 @@ On GitHub, use the pull request button to merge `working` into `master`.
 
 `git diff`: compare your working directory to the latest commit (changes are highlighted)
 
-#### Tagging ([doc](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
+#### Other processes
+
+##### Tagging ([doc](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
 
 After an important update to a branch, or when you want to apply a version, you can add a tag. You can do this after you've already committed and pushed your updates to the origin (GitHub). For example, if you've just pushed important changes to the `master` branch and want to call it version 1.0, use:
 
@@ -204,3 +208,30 @@ git push origin --tags
 ```
 
 Now your tags will appear next to your list of branches on GitHub.
+
+##### Stash
+
+Stash is useful when you want to save your current (modified) repository state of staged/unstaged changes, but want to return to a clean (HEAD) version of the branch for some reason. 
+
+To save the current state as a stash:
+
+```
+git stash
+```
+
+Your branch will reset to HEAD. You can view saved stashes with `git stash show`.
+
+To return to the state saved in the most recent stash [index=0], and remove the stash. Index is only necessary when you want to use an older stash:
+
+```
+git stash pop [--index 1]
+```
+
+You can also apply a stash without deleting it using `git stash apply`.
+
+Remove one stash with `git stash drop [1]` or all stashes in the branch with `git stash clear`.
+
+
+
+
+
