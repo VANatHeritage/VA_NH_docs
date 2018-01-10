@@ -211,7 +211,7 @@ git push origin --tags
 
 Now your tags will appear next to your list of branches on GitHub.
 
-##### Stash
+##### Stash ([doc](https://git-scm.com/docs/git-stash))
 
 Stash is useful when you want to save your current (modified) repository state of staged/unstaged changes, but want to return to a clean (HEAD) version of the branch for some reason. 
 
@@ -233,12 +233,18 @@ You can also apply a stash without deleting it using `git stash apply`.
 
 Remove one stash with `git stash drop [1]` or all stashes in the branch with `git stash clear`.
 
-##### Revert
+##### Revert ([doc](https://git-scm.com/docs/git-revert))
 
-Revert is used to undo commits. You can begin a revert only from a clean HEAD (no staged/unstaged changes). To revert a commit you need to know the commit name (generally you will use `git log` to find it).
+Revert is used to undo commits. You can begin a revert only from a clean HEAD (no staged/unstaged changes). To revert a commit you need to identify the commit name, which consists of a long string of letters/numbers (generally you will use `git log` to find it). 
 
-
+You only need to enter enough of the commit name in order to uniquely identify it, e.g.:
 
 ```
-git revert [commit]
+git revert 6e27a2
 ```
+will revert :
+
+>  commit 6e27a25e0c0d97a99e5da2bddc1f4f036af9fd63
+
+This will automatically create a new commit to perform the change. Add the option `-n` to only modify the working tree.
+
