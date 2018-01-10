@@ -185,6 +185,8 @@ On GitHub, use the pull request button to merge `working` into `master`.
 
 `git diff`: compare your working directory to the latest commit (changes are highlighted)
 
+`git log`: show the most recent commits on the branch
+
 #### Other processes
 
 ##### Tagging ([doc](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
@@ -230,6 +232,10 @@ git stash pop [--index 1]
 You can also apply a stash without deleting it using `git stash apply`.
 
 Remove one stash with `git stash drop [1]` or all stashes in the branch with `git stash clear`.
+
+##### Revert
+
+Revert is used to undo commits. You can begin a revert only from a clean HEAD (no staged/unstaged changes).
 
 
 
