@@ -248,3 +248,14 @@ will revert :
 
 This will automatically create a new commit to perform the change. Add the option `-n` to only modify the working tree.
 
+
+
+## References
+
+- [git-flow cheat sheet](https://danielkummer.github.io/git-flow-cheatsheet/) : extension to implement strategy for a git workflow 
+
+  - [comparison](https://gist.github.com/JamesMGreene/cdd0ac49f90c987e45ac) with commands in base git
+
+- [.gitignore](https://www.atlassian.com/git/tutorials/gitignore) tutorial  [(templates)](https://gist.github.com/JamesMGreene/cdd0ac49f90c987e45ac)
+
+  ​
