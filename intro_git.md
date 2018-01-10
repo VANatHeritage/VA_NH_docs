@@ -237,7 +237,7 @@ Remove one stash with `git stash drop [1]` or all stashes in the branch with `gi
 
 Revert is used to undo commits. You can begin a revert only from a clean HEAD (no staged/unstaged changes). To revert a commit you need to know the commit name (generally you will use `git log` to find it).
 
-BLABLABLA revert this
+
 
 ```
 git revert [commit]
