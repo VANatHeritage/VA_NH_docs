@@ -46,7 +46,7 @@ git --help
 
 *Note: if you're just working with an existing (GitHub) repository, skip to the **Working with existing repositories** section*.
 
-Any folder can be initialized as a new git repository. For example, to create a new **local** repository `VA_NH_docs` to store this document and other helpful tools for the organization, we can use the commands:
+Any folder can be initialized as a new git repository. For example, to create a new **local** repository `VA_NH_docs` to store this document and other helpful scripts, we can use the commands:
 
 ```
 git init VA_NH_docs 
@@ -58,7 +58,7 @@ That creates a new folder, which we now navigate to:
 cd VA_NH_docs
 ```
 
-Git bash will now indicate that you are in a git repository, since it will show the current branch you are using (by default in a new repostory, this is called `master`) in parentheses in blue lettering.
+Git bash will now indicate that you are in a git repository, since it will show the current branch you are using (by default in a new repository, this is called `master`) in parentheses in blue lettering.
 
 You can now add folders/files to this repository. For example, this document `intro_git.md`  and associated images are added to the folder. It's also a  good idea to always create a file called `README.md` file directly in a repository folder, which will automatically display on the main repository page on GitHub. 
 
@@ -106,7 +106,7 @@ Now the remote repository is up-to-date with our local one.
 
 ## Working with existing repositories
 
-#### If you want to create a new local repository from an existing (GitHub) remote repository
+#### Create a new local repository from an existing (GitHub) remote repository
 
 Navigate to where you want to create a local repository (e.g., `cd E:/git`). 
 
@@ -170,23 +170,6 @@ If instead you want to merge on GitHub, again commit all your changes to `workin
 
 On GitHub, use the pull request button to merge `working` into `master`.
 
-## Good to know
-
-#### Commands
-
-`git status` : check your current working directory status
-
-`git branch`: list all branches in the repository; `git branch -d [branch_name]` deletes it locally
-- to delete a remote branch: `git push origin :[branch_name]`
-  - *note*: GitHub will not allow you to delete the default remote branch (generally `master`). To delete it, first change the default branch on GitHub (main repo webpage -> Branches)
-- `git branch -m [branch] [new_branchname]` : rename a branch
-
-`git remote -v`: list remotes for a repository
-
-`git diff`: compare your working directory to the latest commit (changes are highlighted)
-
-`git log`: show the most recent commits on the branch
-
 #### Other processes
 
 ##### Tagging ([doc](https://git-scm.com/book/en/v2/Git-Basics-Tagging))
@@ -197,7 +180,7 @@ After an important update to a branch, or when you want to apply a version, you 
 git tag v1.0
 ```
 
-Instead, if you wanted to add more information about the tagging point, use an *annotated* (`-a`) tag with a message (`-m`):
+Instead, if you wanted to add additional information about the tag, use an *annotated* (`-a`) tag with a message (`-m`):
 
 ```
 git tag -a v1.0 -m "First stable release version 1.0"
@@ -233,20 +216,48 @@ You can also apply a stash without deleting it using `git stash apply`.
 
 Remove one stash with `git stash drop [1]` or all stashes in the branch with `git stash clear`.
 
-##### Revert ([doc](https://git-scm.com/docs/git-revert))
+##### Revert ([doc](https://git-scm.com/docs/git-revert)) and specifying commits
 
-Revert is used to undo commits. You can begin a revert only from a clean HEAD (no staged/unstaged changes). To revert a commit you need to identify the commit name, which consists of a long string of letters/numbers (generally you will use `git log` to find it). 
+Revert is used to undo changes in a commit. You can begin a revert only from a clean HEAD (no staged/unstaged changes). To revert a commit you need to identify the commit name, which consists of a long string of letters/numbers (generally you will use `git log` to find it). 
 
 You only need to enter enough of the commit name in order to uniquely identify it, e.g.:
 
 ```
 git revert 6e27a2
 ```
+
 will revert :
 
->  commit 6e27a25e0c0d97a99e5da2bddc1f4f036af9fd63
+> commit 6e27a25e0c0d97a99e5da2bddc1f4f036af9fd63
 
-This will automatically create a new commit to perform the change. Add the option `-n` to only modify the working tree.
+You can also specifiy commits using the form `@{n}`, where `n` is the index number for the commit (0 = last [most recent] commit, 1 = 2nd to last commit, etc.)
+
+This will automatically create a new commit to perform the change. Add the option `-n` to only modify the working tree, so you can commit manually later.
+
+## Good to know
+
+#### Commands
+
+`git status`: check your current working directory status
+
+`git branch`: list all branches in the repository
+
+- `git branch -d [branch_name]` deletes a local branch
+
+
+- to delete a remote branch: `git push origin :[branch_name]`
+  - *note*: GitHub will not allow you to delete the default remote branch (generally `master`). To delete it, first change the default branch on GitHub (main repo webpage -> Branches)
+- `git branch -m [branch] [new_branchname]` : rename a branch
+
+`git remote -v`: list remotes for a repository
+
+`git diff`: compare your current working directory to the latest commit (changes are highlighted)
+
+- use `git diff [branch]` and `git diff [remote]/[branch]` to compare to other branches / remote branches
+
+`git log`: show the most recent commits on the branch
+
+`git show [commit]`: show the changes from a specific commit
 
 
 
